@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { scroll-behavior: smooth; }
+body { @apply bg-mist text-ink font-body antialiased; }
+h1, h2, h3 { @apply font-display tracking-tight; }
+:focus-visible { outline: 3px solid #F2B134; outline-offset: 2px; }
+.btn { @apply inline-flex items-center justify-center rounded-md px-5 py-3 font-semibold transition-all duration-200 hover:-translate-y-0.5; }
+.btn-primary { @apply bg-teal text-white shadow-lg shadow-teal/25 hover:bg-navy; }
+.btn-ghost { @apply border border-ink text-ink hover:bg-ink hover:text-white; }
+.btn-light { @apply border border-white/40 text-white hover:bg-white hover:text-ink; }
+.container-x { @apply mx-auto max-w-6xl px-5; }
+.card { @apply rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/10; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; }
+}
