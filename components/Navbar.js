@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <header className={`sticky top-0 z-50 transition-all ${scrolled ? "bg-white/95 shadow-md backdrop-blur" : "bg-white"}`}>
       <div className="bg-ink py-1.5 text-center text-xs text-white/80">
-        Hiring for IT and non-IT roles across India. Call +91 80 0000 0000
+        Hiring for IT and non-IT roles across India. Call +91 8217735799
       </div>
       <div className="container-x flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-display text-xl font-extrabold">
