@@ -32,7 +32,11 @@ export default function JobList() {
               {j.qualifications && (
                 <p className="mt-2 text-ink/80">
                   <span className="font-semibold">Eligibility:</span> {j.qualifications.join(", ")}
-                  {" · "}{j.experience}
+                </p>
+              )}
+              {j.experience && (
+                <p className="mt-1 text-ink/80">
+                  <span className="font-semibold">Experience:</span> {j.experience}
                 </p>
               )}
               {j.entry && <p className="mt-1 text-ink/80">{j.entry}</p>}
