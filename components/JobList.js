@@ -30,9 +30,12 @@ export default function JobList() {
                 {[j.type, j.location, j.mode, j.exp].filter(Boolean).join(" · ")}
               </p>
               {j.qualifications && (
-                <p className="mt-2 text-ink/80">
-                  <span className="font-semibold">Eligibility:</span> {j.qualifications.join(", ")}
-                </p>
+                <div className="mt-2 text-ink/80">
+                  <p className="font-semibold">Eligibility:</p>
+                  {j.qualifications.map((qualification) => (
+                    <p key={qualification}>{qualification}</p>
+                  ))}
+                </div>
               )}
               {j.experience && (
                 <p className="mt-1 text-ink/80">
