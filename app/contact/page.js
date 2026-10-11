@@ -11,7 +11,8 @@ export default function Contact() {
         <h1 className="text-4xl font-extrabold">Contact us</h1>
         <p className="mt-3 text-lg text-ink/80">Hiring, job search or consulting: send a note and we reply in one working day.</p>
         <div className="mt-6 space-y-1">
-          <p>{company.email}</p><p>{company.phone}</p><p>{company.address}</p>
+          <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
+          <p>{company.phone}</p><p>{company.address}</p>
         </div>
       </div>
       <Suspense fallback={null}><ContactForm /></Suspense>

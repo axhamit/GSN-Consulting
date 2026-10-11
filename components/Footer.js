@@ -18,7 +18,8 @@ export default function Footer() {
         </div>
         <div className="space-y-1 text-white/80">
           <p className="mb-1 font-bold text-white">Reach us</p>
-          <p>{company.email}</p><p>{company.phone}</p><p>{company.address}</p>
+          <p><a href={`mailto:${company.email}`}>{company.email}</a></p>
+          <p>{company.phone}</p><p>{company.address}</p>
         </div>
       </div>
       <p className="border-t border-white/10 py-4 text-center text-sm text-white/60">
