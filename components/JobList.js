@@ -1,33 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
-export default function JobList() {
-  const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function JobList({ initial = [] }) {
+  const [jobs] = useState(initial);
   const [type, setType] = useState("All");
   const [q, setQ] = useState("");
-
-  useEffect(() => {
-    fetch("/api/jobs")
-      .then((res) => res.json())
-      .then((data) => {
-        setJobs(data.jobs || []);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching jobs:", err);
-        setLoading(false);
-      });
-  }, []);
 
   const types = ["All", ...new Set(jobs.map((job) => job.type))];
   const shown = jobs.filter(
     (j) => (type === "All" || j.type === type) &&
       `${j.title} ${j.type}`.toLowerCase().includes(q.toLowerCase())
   );
-  if (loading) return <p className="text-gray-500">Loading jobs...</p>;
-
   return (
     <div>
       <div className="flex flex-wrap items-center gap-3">

@@ -15,4 +15,7 @@ const JobSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+JobSchema.index({ createdAt: -1 });
+JobSchema.index({ visible: 1, createdAt: -1 });
+
 export default mongoose.models.Job || mongoose.model("Job", JobSchema);

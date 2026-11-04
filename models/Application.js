@@ -21,4 +21,7 @@ const ApplicationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+ApplicationSchema.index({ createdAt: -1 });
+ApplicationSchema.index({ status: 1, createdAt: -1 });
+
 export default mongoose.models.Application || mongoose.model("Application", ApplicationSchema);
