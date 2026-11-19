@@ -17,14 +17,14 @@ export default function JobList({ initial = [] }) {
       <div className="flex flex-wrap items-center gap-3">
         {types.map((t) => (
           <button key={t} onClick={() => setType(t)} aria-pressed={type === t}
-            className={`rounded-xl px-4 py-2 transition ${type === t ? "bg-blue-600 text-white" : "border border-gray-200 hover:bg-gray-100"}`}>{t}</button>
+            className={`rounded-xl px-4 py-2 transition ${type === t ? "bg-brandBlue font-semibold text-white shadow-md shadow-brandBlue/20" : "border border-line hover:border-brandBlue/40 hover:bg-mist"}`}>{t}</button>
         ))}
         <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search job title"
-          aria-label="Search job title" className="min-w-[220px] flex-1 rounded-xl border border-gray-200 px-4 py-2 outline-none focus:border-blue-500" />
+          aria-label="Search job title" className="min-w-[220px] flex-1 rounded-xl border border-line px-4 py-2 outline-none focus:border-teal" />
       </div>
       <ul className="mt-6 grid gap-4">
         {shown.map((j) => (
-          <li key={j._id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-gray-200 bg-white p-5">
+          <li key={j._id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-line bg-white p-5">
             <div>
               <h3 className="text-lg font-bold">{j.title}</h3>
               <p className="text-gray-600">
@@ -42,7 +42,7 @@ export default function JobList({ initial = [] }) {
               )}
               <p className="mt-2 text-sm text-gray-600 line-clamp-3">{j.description}</p>
             </div>
-            <Link href={`/apply?job=${encodeURIComponent(j._id)}`} className="rounded-xl bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">Apply</Link>
+            <Link href={`/apply?job=${encodeURIComponent(j._id)}`} className="rounded-xl bg-brandBlue px-4 py-2 font-semibold text-white shadow-md shadow-brandBlue/20 transition hover:bg-navy">Apply</Link>
           </li>
         ))}
         {shown.length === 0 && <li className="text-gray-500">No jobs match. Clear the search or choose All.</li>}

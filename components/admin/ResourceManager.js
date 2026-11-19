@@ -45,7 +45,7 @@ export default function ResourceManager({ resource, singular, initial, fields, r
 
   return (
     <div className="mt-6">
-      {!editing && <button className="inline-flex items-center gap-2 rounded-xl bg-teal px-4 py-2.5 font-semibold text-white transition hover:bg-ink" onClick={() => openForm(null)}><Plus size={16} /> Add {singular}</button>}
+      {!editing && <button className="inline-flex items-center gap-2 rounded-xl bg-brandBlue px-4 py-2.5 font-semibold text-white shadow-md shadow-brandBlue/20 transition hover:bg-navy" onClick={() => openForm(null)}><Plus size={16} /> Add {singular}</button>}
 
       {editing && (
         <form onSubmit={save} className="mt-5 space-y-5 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-7">
@@ -78,7 +78,7 @@ export default function ResourceManager({ resource, singular, initial, fields, r
           ))}
           {error && <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">{error}</p>}
           <div className="flex flex-wrap gap-3">
-            <button className="inline-flex items-center gap-2 rounded-xl bg-teal px-4 py-2.5 font-semibold text-white transition hover:bg-ink disabled:opacity-50" disabled={busy}>{busy ? <Loader2 className="animate-spin" size={16} /> : "Save changes"}</button>
+            <button className="inline-flex items-center gap-2 rounded-xl bg-brandBlue px-4 py-2.5 font-semibold text-white shadow-md shadow-brandBlue/20 transition hover:bg-navy disabled:opacity-50" disabled={busy}>{busy ? <Loader2 className="animate-spin" size={16} /> : "Save changes"}</button>
             <button type="button" className="rounded-xl border border-line px-4 py-2.5 font-semibold text-ink transition hover:bg-mist" onClick={() => setEditing(null)}>Cancel</button>
           </div>
         </form>

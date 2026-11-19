@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowUpRight, Briefcase, FileText, Inbox, LayoutDashboard, LogOut, Loader2 } from "lucide-react";
 
@@ -34,9 +35,15 @@ export default function Sidebar({ email }) {
   return (
     <aside className="relative z-10 border-b border-line bg-white md:sticky md:top-0 md:flex md:h-screen md:w-64 md:shrink-0 md:flex-col md:border-b-0 md:border-r">
       <Link href="/admin" className="flex items-center gap-3 px-5 py-5">
-        <span className="grid h-11 w-11 place-items-center rounded-2xl bg-teal font-display text-xl font-extrabold text-white shadow-lg shadow-teal/20">G</span>
         <span>
-          <span className="block font-display text-base font-bold text-ink">GSN <span className="text-teal">Consulting</span></span>
+          <Image
+            src="/logo/logo.png"
+            alt="GSN Consulting"
+            width={1672}
+            height={941}
+            sizes="128px"
+            className="h-auto w-[128px]"
+          />
           <span className="mt-0.5 block text-xs text-ink/55">Admin workspace</span>
         </span>
       </Link>

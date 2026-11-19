@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { company } from "@/lib/data";
 import Newsletter from "./Newsletter";
 
@@ -7,7 +8,16 @@ export default function Footer() {
     <footer className="bg-ink text-white">
       <div className="container-x grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-display text-2xl font-extrabold">GSN <span className="text-teal">Consulting</span></p>
+          <Link href="/" aria-label="GSN Consulting home" className="inline-block rounded-lg bg-white">
+            <Image
+              src="/logo/logo.png"
+              alt="GSN Consulting"
+              width={1672}
+              height={941}
+              sizes="150px"
+              className="h-auto w-[150px]"
+            />
+          </Link>
           <p className="mb-5 mt-3 max-w-sm text-white/70">Hiring and consulting for IT and non-IT teams. Get new openings in your inbox.</p>
           <Newsletter />
         </div>

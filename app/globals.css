@@ -4,9 +4,9 @@
 html { scroll-behavior: smooth; }
 body { @apply bg-mist text-ink font-body antialiased; }
 h1, h2, h3 { @apply font-display tracking-tight; }
-:focus-visible { outline: 3px solid #F2B134; outline-offset: 2px; }
+:focus-visible { outline: 3px solid #1688F0; outline-offset: 2px; }
 .btn { @apply inline-flex items-center justify-center rounded-md px-5 py-3 font-semibold transition-all duration-200 hover:-translate-y-0.5; }
-.btn-primary { @apply bg-teal text-white shadow-lg shadow-teal/25 hover:bg-navy; }
+.btn-primary { @apply bg-brandBlue text-white shadow-lg shadow-brandBlue/25 hover:bg-navy; }
 .btn-ghost { @apply border border-ink text-ink hover:bg-ink hover:text-white; }
 .btn-light { @apply border border-white/40 text-white hover:bg-white hover:text-ink; }
 .container-x { @apply mx-auto max-w-6xl px-5; }

@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 animate-blob rounded-full bg-teal/40 blur-3xl" />
-      <div className="pointer-events-none absolute -right-10 bottom-0 h-80 w-80 animate-blob rounded-full bg-amber/30 blur-3xl [animation-delay:3s]" />
+      <div className="pointer-events-none absolute -right-10 bottom-0 h-80 w-80 animate-blob rounded-full bg-brandBlue/30 blur-3xl [animation-delay:3s]" />
       <div className="container-x relative grid items-center gap-12 py-20 md:grid-cols-2 md:py-28">
         <div className="animate-pop">
           <span className="inline-block rounded-full bg-white/10 px-4 py-1 text-sm">Hiring and consulting, IT and non-IT</span>
@@ -20,7 +20,7 @@ export default function Hero() {
           </div>
           <div className="mt-8 flex items-center gap-3 text-sm text-white/80">
             <div className="flex -space-x-2">
-              {["bg-teal", "bg-amber", "bg-sky-400", "bg-rose-400"].map((c, i) => (
+              {["bg-teal", "bg-brandBlue", "bg-teal/70", "bg-brandBlue/70"].map((c, i) => (
                 <span key={i} className={`h-8 w-8 rounded-full border-2 border-navy ${c}`} />
               ))}
             </div>
@@ -36,7 +36,7 @@ export default function Hero() {
             <div className="mt-3 h-2 w-full rounded bg-mist"><div className="h-2 w-3/4 rounded bg-teal" /></div>
             <p className="mt-1 text-xs text-ink/60">12 profiles shortlisted</p>
           </div>
-          <div className="absolute right-0 top-28 w-56 animate-float-slow rounded-xl bg-amber p-4 text-ink shadow-2xl [animation-delay:1s]">
+          <div className="absolute right-0 top-28 w-56 animate-float-slow rounded-xl bg-brandBlue p-4 text-white shadow-2xl [animation-delay:1s]">
             <p className="text-xs font-semibold">OFFER ACCEPTED</p>
             <p className="mt-1 font-display text-lg font-bold">HR Business Partner</p>
             <p className="text-sm">Mumbai · placed in 9 days</p>

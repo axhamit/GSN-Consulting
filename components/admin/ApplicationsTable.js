@@ -46,9 +46,9 @@ export default function ApplicationsTable({ initial }) {
       <div className="flex flex-wrap items-center gap-3">
         <div className="relative min-w-[220px] flex-1">
           <Search size={16} className="absolute left-3 top-3 text-gray-400" />
-          <input className="w-full rounded-xl border border-gray-200 px-4 py-2.5 pl-9 outline-none focus:border-blue-500" placeholder="Search name, email, job or company" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search applications" />
+          <input className="w-full rounded-xl border border-line px-4 py-2.5 pl-9 outline-none focus:border-teal" placeholder="Search name, email, job or company" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search applications" />
         </div>
-        <select className="rounded-xl border border-gray-200 px-4 py-2.5 outline-none focus:border-blue-500" value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="Filter by status">
+        <select className="rounded-xl border border-line px-4 py-2.5 outline-none focus:border-teal" value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="Filter by status">
           <option value="all">All statuses</option>
           {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
@@ -69,7 +69,7 @@ export default function ApplicationsTable({ initial }) {
                 </button>
                 {a.hasResume && <a href={`/api/admin/applications/${a._id}/resume`} className="rounded-xl border border-gray-200 px-3 py-1.5 text-xs transition hover:bg-gray-100" aria-label={`Download resume of ${a.name}`}><FileDown size={15} /> Resume</a>}
                 {a.resumeUrl && <a href={a.resumeUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-gray-200 px-3 py-1.5 text-xs transition hover:bg-gray-100"><ExternalLink size={15} /> Link</a>}
-                <select className="rounded-xl border border-gray-200 px-4 py-1.5 outline-none focus:border-blue-500" value={a.status} onChange={(e) => update(a._id, { status: e.target.value })} aria-label={`Status for ${a.name}`}>
+                <select className="rounded-xl border border-line px-4 py-1.5 outline-none focus:border-teal" value={a.status} onChange={(e) => update(a._id, { status: e.target.value })} aria-label={`Status for ${a.name}`}>
                   {statuses.map((s) => <option key={s} value={s}>{s}</option>)}
                 </select>
                 <button onClick={() => remove(a._id)} className="rounded-md p-2 text-red-600 hover:bg-red-50" aria-label={`Delete application from ${a.name}`}><Trash2 size={17} /></button>
@@ -77,12 +77,12 @@ export default function ApplicationsTable({ initial }) {
               {open === a._id && (
                 <div className="space-y-3 border-t border-gray-200 bg-gray-50 p-4 text-sm">
                   <p className="text-gray-500">
-                    <a className="text-blue-600 hover:underline" href={`mailto:${a.email}`}>{a.email}</a> &nbsp;|&nbsp; <a className="text-blue-600 hover:underline" href={`tel:${a.phone}`}>{a.phone}</a>
+                    <a className="text-teal hover:underline" href={`mailto:${a.email}`}>{a.email}</a> &nbsp;|&nbsp; <a className="text-teal hover:underline" href={`tel:${a.phone}`}>{a.phone}</a>
                   </p>
                   <p className="text-gray-500">Current company: <span className="text-gray-700">{a.currentCompany || "n/a"}</span>, notice period: <span className="text-gray-700">{a.noticePeriod || "n/a"}</span></p>
                   {a.message && <p className="whitespace-pre-wrap">{a.message}</p>}
                   <label className="mb-2 block text-sm font-medium" htmlFor={`an-${a._id}`}>Internal notes</label>
-                  <textarea id={`an-${a._id}`} className="w-full rounded-xl border border-gray-200 px-4 py-3 outline-none focus:border-blue-500" rows={2} defaultValue={a.notes} onBlur={(e) => e.target.value !== (a.notes || "") && update(a._id, { notes: e.target.value })} />
+                  <textarea id={`an-${a._id}`} className="w-full rounded-xl border border-line px-4 py-3 outline-none focus:border-teal" rows={2} defaultValue={a.notes} onBlur={(e) => e.target.value !== (a.notes || "") && update(a._id, { notes: e.target.value })} />
                 </div>
               )}
             </li>

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -24,10 +25,17 @@ export default function Navbar() {
       <div className="bg-ink py-1.5 text-center text-xs text-white/80">
         Hiring for IT and non-IT roles across Global. Call +91 8217735799
       </div>
-      <div className="container-x flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-display text-xl font-extrabold">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-teal text-white">G</span>
-          GSN <span className="font-medium text-teal">Consulting</span>
+      <div className="container-x flex h-[72px] items-center justify-between md:h-20">
+        <Link href="/" aria-label="GSN Consulting home" className="shrink-0">
+          <Image
+            src="/logo/logo.png"
+            alt="GSN Consulting"
+            width={1672}
+            height={941}
+            priority
+            sizes="(max-width: 640px) 112px, 132px"
+            className="h-auto w-[112px] sm:w-[132px]"
+          />
         </Link>
         <nav className="hidden gap-8 md:flex" aria-label="Main">
           {links.map((l) => (
@@ -36,7 +44,7 @@ export default function Navbar() {
           ))}
         </nav>
         <Link href="/contact" className="btn btn-primary hidden !py-2 md:inline-flex">Hire talent</Link>
-        <button className="text-2xl md:hidden" aria-expanded={open} aria-label="Toggle menu" onClick={() => setOpen(!open)}>
+        <button className="rounded-lg p-2 text-2xl text-brandBlue transition hover:bg-brandBlue/10 focus-visible:outline-brandBlue md:hidden" aria-expanded={open} aria-label="Toggle menu" onClick={() => setOpen(!open)}>
           {open ? "✕" : "☰"}
         </button>
       </div>

@@ -23,7 +23,7 @@ const statusClass = (status) => {
   if (status === "new") return "bg-amber-50 text-amber-800";
   if (status === "shortlisted" || status === "qualified") return "bg-teal/10 text-teal";
   if (status === "rejected" || status === "closed") return "bg-gray-100 text-gray-600";
-  return "bg-blue-50 text-blue-700";
+  return "bg-brandBlue/10 text-navy";
 };
 
 export default async function Dashboard() {
@@ -39,9 +39,9 @@ export default async function Dashboard() {
   const attentionCount = newApps + newLeads;
   const stats = [
     { label: "Needs review", value: attentionCount, detail: `${newApps} applications · ${newLeads} enquiries`, href: "/admin/applications", icon: Inbox, color: "text-amber-700 bg-amber-50" },
-    { label: "All candidates", value: totalApps, detail: "Applications received", href: "/admin/applications", icon: UserRound, color: "text-blue-700 bg-blue-50" },
+    { label: "All candidates", value: totalApps, detail: "Applications received", href: "/admin/applications", icon: UserRound, color: "text-ink bg-mist" },
     { label: "Open positions", value: openJobs, detail: "Visible on your website", href: "/admin/jobs", icon: Briefcase, color: "text-teal bg-teal/10" },
-    { label: "New enquiries", value: newLeads, detail: "Waiting for a follow-up", href: "/admin/leads", icon: Inbox, color: "text-violet-700 bg-violet-50" },
+    { label: "New enquiries", value: newLeads, detail: "Waiting for a follow-up", href: "/admin/leads", icon: Inbox, color: "text-teal bg-teal/10" },
   ];
 
   return (
@@ -54,7 +54,7 @@ export default async function Dashboard() {
             <h1 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Welcome to your workspace</h1>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">Keep hiring moving. Review candidates, follow up on enquiries, and manage the roles on your website.</p>
           </div>
-          <Link href="/admin/jobs?new=1" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-teal px-4 py-3 text-sm font-bold text-white transition hover:bg-teal/90">
+          <Link href="/admin/jobs?new=1" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-brandBlue px-4 py-3 text-sm font-bold text-white shadow-lg shadow-brandBlue/25 transition hover:bg-navy">
             <Plus size={17} /> Post a job
           </Link>
         </div>
@@ -139,7 +139,7 @@ export default async function Dashboard() {
             <ul className="divide-y divide-line">
               {recentLeads.map((lead) => (
                 <li key={String(lead._id)} className="flex items-center gap-3 px-5 py-4">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-blue-50 text-sm font-bold text-blue-700">{lead.name?.slice(0, 1).toUpperCase() || "?"}</span>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-teal/10 text-sm font-bold text-teal">{lead.name?.slice(0, 1).toUpperCase() || "?"}</span>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-bold text-ink">{lead.name}{lead.company ? <span className="font-normal text-ink/55"> · {lead.company}</span> : null}</p>
                     <p className="truncate text-xs text-ink/55">{lead.type === "employer" ? "Hiring request" : lead.interest || "General enquiry"}</p>

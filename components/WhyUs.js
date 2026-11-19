@@ -9,7 +9,7 @@ export default function WhyUs() {
         <p className="mt-4 text-lg text-ink/75">Most of our clients come back for a second and third hire. Here is why.</p>
         <div className="mt-6 grid grid-cols-2 gap-4">
           <div className="rounded-xl bg-ink p-5 text-white"><p className="font-display text-3xl font-bold">90 days</p><p className="text-sm text-white/70">Replacement guarantee</p></div>
-          <div className="rounded-xl bg-amber p-5"><p className="font-display text-3xl font-bold">3 days</p><p className="text-sm">To first shortlist</p></div>
+          <div className="rounded-xl bg-brandBlue p-5 text-white"><p className="font-display text-3xl font-bold">3 days</p><p className="text-sm text-white/85">To first shortlist</p></div>
         </div>
       </Reveal>
       <div className="space-y-4">
